@@ -33,11 +33,11 @@
                   <li>
                     <a href="{% url 'store' %}">All Products</a>
                   </li>
-                  {% for category in links%}
+                  {% for linkcategory in links%}
 
                   <li>
-                    <a href="{{category.get_url}}"
-                      >{{category.category_name}}</a
+                    <a href="{{linkcategory.get_url}}"
+                      >{{linkcategory.category_name}}</a
                     >
                   </li>
                   {% endfor %}
@@ -170,7 +170,9 @@
                   </div>
                   <!-- price-wrap.// -->
                 </div>
-                <a href="#" class="btn btn-block btn-success"
+                <a
+                  href="{% url 'add_cart' product.id %}"
+                  class="btn btn-block btn-success"
                   >Agregar al Carrito
                 </a>
               </figcaption>
